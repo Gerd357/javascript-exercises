@@ -1,12 +1,16 @@
-const removeFromArray = function(array, element) {
+const removeFromArray = function(array, ...theArgs) {
 
 
-    for (var i = 0; i < array.length; i++){
+    for (const arg of theArgs){
 
-        if (array[i] === element){
-            array = array.slice(0,i).concat(array.slice(i + 1));
+        for (var i = 0; i < array.length; i++){
+            if (array[i] === arg){
+                array = array.slice(0,i).concat(array.slice(i + 1));
+            }
         }
+            
     }
+    
 
     return array;
 };
